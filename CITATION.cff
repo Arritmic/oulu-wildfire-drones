@@ -1,0 +1,57 @@
+cff-version: 1.2.0
+message: "If you use this software or results derived from it, please cite both the software and the paper."
+title: "oulu-wildfire-drones: Simulation and Evaluation of Task Allocation in Drone Swarms for Wildfire Response"
+abstract: >
+  An agent-based simulation for comparative evaluation of task allocation
+  strategies (heuristic, auction, and PPO-based RL) in resource-constrained
+  multi-agent drone swarms for wildfire response. The simulator integrates a
+  probabilistic Cellular Automata fire model with a spatial wind field, heterogeneous
+  fuel loads, drone resource limits (battery, water), ANSI-frame logging, and a
+  server-based replay viewer.
+authors:
+  - family-names: Vo
+    given-names: Huan
+    affiliation: Center for Machine Vision and Signal Analysis (CMVS), University of Oulu, Finland
+  - family-names: Álvarez Casado
+    given-names: Constantino
+    affiliation: CMVS, University of Oulu, Finland
+  - family-names: Nguyen
+    given-names: Le
+    affiliation: CMVS, University of Oulu, Finland
+keywords:
+  - wildfire simulation
+  - multi-agent systems
+  - drone swarms
+  - task allocation
+  - auctions
+  - reinforcement learning
+  - PPO
+  - agent-based modeling
+  - MESA
+  - ANSI replay
+license: Apache-2.0
+repository-code: "https://github.com/Arritmic/oulu-wildfire-drones"
+version: 0.1.0
+date-released: 2025-08-23
+type: software
+preferred-citation:
+  type: article
+  title: "A Comparative Analysis of Task Allocation Strategies for Resource-Constrained Multi-Agent Drone Swarms in Wildfire Response"
+  authors:
+    - family-names: Vo
+      given-names: Huan
+    - family-names: Álvarez Casado
+      given-names: Constantino
+    - family-names: Kumar
+      given-names: Abhishek
+    - family-names: Tamminen
+      given-names: Satu
+    - family-names: Ihantola
+      given-names: Petri
+    - family-names: Bordallo López
+      given-names: Miguel
+    - family-names: Nguyen
+      given-names: Le
+  year: 2025
+  # doi: "TO_BE_ADDED"
+  url: "https://github.com/Arritmic/oulu-wildfire-drones"
