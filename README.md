@@ -50,6 +50,9 @@ Components:
 - **Visual logs**
   - ANSI per-step frames (grid + wind panel) and agent status; optional `.html` conversion (inline CSS).
 
+![Framework architecture](docs/figures/visualizer_interface.png)
+
+
 ---
 
 ## Installation
