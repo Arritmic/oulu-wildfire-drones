@@ -37,3 +37,33 @@ canvas { background: #fff; border: 1px solid #e5e5e5; border-radius: 6px; margin
 @media (max-width: 900px) {
   .metrics .metric-panels { grid-template-columns: 1fr; }
 }
+/* Legend */
+.legend {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.swatch {
+  display: inline-block;
+  font-weight: 700;
+  font-family: ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+/* Colors aligned with ANSI used in logs */
+.sw-drone    { color: #4d88ff; }  /* 94 */
+.sw-burning  { color: #ff4d4d; }  /* 91 */
+.sw-burnt    { color: #5f0000; }  /* 38;5;52 */
+.sw-ext      { color: #d7af00; }  /* 38;5;178 */
+.sw-lake     { color: #33cccc; }  /* 96 */
+.sw-resupply { color: #ffd24d; }  /* 93 */
+.sw-urban    { color: #808080; }  /* 90 */
+.sw-forest   { color: #32a852; }  /* close to ANSI green */
+.sw-grass    { color: #59c659; }  /* 92 */

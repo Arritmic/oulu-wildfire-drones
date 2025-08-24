@@ -48,11 +48,21 @@
         <label for="bg">BG</label>
         <input id="bg" type="color" value="#111111">
       </div>
+
       <div id="grid" class="grid"></div>
-      <small class="legend">
-        Legend: D=drone(blue) █(red)=burning █(brown)=natural burnt ▓(orange)=extinguished
-        █(cyan)=lake █(yellow)=resupply █(gray)=urban █(green)=forest █(light-green)=grassland
-      </small>
+
+      <!-- Colored legend -->
+      <div class="legend">
+        <span class="legend-item"><span class="swatch sw-drone">D</span> drone</span>
+        <span class="legend-item"><span class="swatch sw-burning">█</span> burning</span>
+        <span class="legend-item"><span class="swatch sw-burnt">█</span> natural burnt</span>
+        <span class="legend-item"><span class="swatch sw-ext">▓</span> extinguished</span>
+        <span class="legend-item"><span class="swatch sw-lake">█</span> lake</span>
+        <span class="legend-item"><span class="swatch sw-resupply">█</span> resupply</span>
+        <span class="legend-item"><span class="swatch sw-urban">█</span> urban</span>
+        <span class="legend-item"><span class="swatch sw-forest">█</span> forest</span>
+        <span class="legend-item"><span class="swatch sw-grass">█</span> grassland</span>
+      </div>
     </section>
 
     <section class="metrics">
