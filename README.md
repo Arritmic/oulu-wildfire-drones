@@ -5,6 +5,10 @@
 
 Agent-based simulation for comparative analysis of task allocation strategies in resource-constrained drone swarms for wildfire response. The environment couples a probabilistic Cellular Automata fire model with a spatial wind field and heterogeneous terrain and fuel loads. Drone agents operate under battery and water constraints and can resupply at lakes or urban stations. The framework records ANSI frames per step and includes a server-based replay viewer.
 
+
+![Framework architecture](docs/figures/wildfire_replay_heuristic_20drones_modaratewind.gif)
+
+
 **Publication status.** The paper **“A Comparative Analysis of Task Allocation Strategies for Resource-Constrained Multi-Agent Drone Swarms in Wildfire Response”** was accepted at the **22nd International Conference on Networking, Sensing, and Control (ICNSC)**.
 
 
