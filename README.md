@@ -13,8 +13,11 @@ Agent-based simulation for comparative analysis of task allocation strategies in
 </p>
 
 
+
 **Publication status.** The paper **“A Comparative Analysis of Task Allocation Strategies for Resource-Constrained Multi-Agent Drone Swarms in Wildfire Response”** was accepted at the **22nd International Conference on Networking, Sensing, and Control (ICNSC)**.
 
+[**[Pre-print]**](https://researchportal.helsinki.fi/en/publications/a-comparative-analysis-of-task-allocation-strategies-for-resource
+) - Pre-print version
 
 ---
 
