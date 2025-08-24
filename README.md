@@ -1,6 +1,7 @@
 # Wildfire Drone Swarms Simulation (oulu-wildfire-drones)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-green.svg)](https://www.python.org/downloads/release/python-380/)
+![Static Badge](https://img.shields.io/badge/status%20-%20under%20construction%20-%20%23FF0000)
 
 
 Agent-based simulation for comparative analysis of task allocation strategies in resource-constrained drone swarms for wildfire response. The environment couples a probabilistic Cellular Automata fire model with a spatial wind field and heterogeneous terrain and fuel loads. Drone agents operate under battery and water constraints and can resupply at lakes or urban stations. The framework records ANSI frames per step and includes a server-based replay viewer.
