@@ -1,0 +1,78 @@
+# baseline.yml — default reproducible scenario
+# Grid: 30x30, 5 ignitions, 2 urban clusters (circle), calm wind (jet S_max=0.6)
+# Drones: 20; lakes provide full refill; urban resupply adds +20.
+
+name: baseline-30x30-calm
+description: Baseline scenario for heuristic/auction/RL comparisons with fixed layout.
+
+# ----------------------------
+# Reproducibility
+# ----------------------------
+rng_seed: 12345        # used by model-level RNG; scripts also seed numpy/python
+
+# ----------------------------
+# Strategy & agents
+# ----------------------------
+drone_type: heuristic  # one of: heuristic | auction | rl
+num_drones: 20
+
+
+# ----------------------------
+# Grid / terrain
+# ----------------------------
+width: 30
+height: 30
+urban_shape: circle              # circle | line
+grassland_max_distance: 3        # grass buffer around urban
+
+# ----------------------------
+# Wind field (jet model)
+# ----------------------------
+wind_jet_S_max: 0.60             # calm: 0.6 (paper default)
+wind_jet_S_min: 0.10
+wind_jet_D: 12                   # half-width in cells
+wind_jet_jitter: 0.02            # per-cell init jitter
+time_varying_wind: false         # gusts off for baseline
+wind_gust_jitter: 0.12           # used only if time_varying_wind=true
+
+# ----------------------------
+# Scenario layout (fixed positions for fairness across strategies)
+# If you prefer per-run random placement, set num_fires/num_urban
+# and let the runner generate positions.
+# ----------------------------
+num_fires: 5                     # kept for file naming; not used if initial positions provided
+num_urban: 2
+
+# Five ignition points (x, y). Modify as needed.
+initial_fire_positions:
+  - [4, 5]
+  - [9, 20]
+  - [12, 12]
+  - [25, 7]
+  - [18, 24]
+
+# Two urban seeds (x, y). Urban cells are generated around these seeds.
+urban_start_positions:
+  - [6, 6]
+  - [22, 20]
+
+# Optional: explicit urban resupply tiles (subset of actual urban cells).
+# If omitted, the model will sample resupply cells from generated urban cells.
+water_resupply_positions:
+  - [7, 6]
+  - [22, 19]
+  - [21, 21]
+
+# ----------------------------
+# RL-specific options (only used when drone_type: rl)
+# ----------------------------
+# For baseline evaluation on fixed layout:
+rl_randomize_each_reset: false
+use_fixed_positions: true
+window_size: 25
+
+# For RL training with randomized episodes, uncomment and adjust:
+# num_fires_range: [3, 8]
+# num_urban_range: [1, 3]
+# wind_s_max_range: [0.3, 1.0]
+# wind_d_range: [8, 12]

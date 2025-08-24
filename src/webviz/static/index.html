@@ -1,10 +1,97 @@
+<!-- webviz/static/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="utf-8"/>
+  <title>Wildfire Log Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/static/styles.css"/>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <h1>Wildfire Log Viewer</h1>
+      <p class="subtitle">Replay ANSI logs, inspect metrics, and export GIF/PNGs.</p>
+    </header>
 
+    <section class="loader">
+      <div class="row">
+        <label for="ans">.ans path</label>
+        <input id="ans" type="text" placeholder="results/log_visual_2025... .ans">
+      </div>
+      <div class="row">
+        <label for="index_jsonl">index.jsonl (optional)</label>
+        <input id="index_jsonl" type="text" placeholder="results/log_visual_... .index.jsonl">
+      </div>
+      <div class="row">
+        <label for="status">agent_status path (optional)</label>
+        <input id="status" type="text" placeholder="results/log_status_... .txt">
+      </div>
+      <div class="row">
+        <button id="load">Load</button>
+        <span id="loadmsg"></span>
+      </div>
+    </section>
+
+    <section class="player">
+      <div class="controls">
+        <button id="play">Play</button>
+        <button id="pause">Pause</button>
+        <label for="fps">FPS</label>
+        <input id="fps" type="number" step="0.1" min="0.1" value="2">
+        <label for="frame">Frame</label>
+        <input id="frame" type="range" min="1" value="1">
+        <span id="frameval">1</span>/<span id="nframes">--</span>
+        <span class="spacer"></span>
+        <label for="fontsize">Font</label>
+        <input id="fontsize" type="number" min="10" max="28" value="14">
+        <label for="bg">BG</label>
+        <input id="bg" type="color" value="#111111">
+      </div>
+      <div id="grid" class="grid"></div>
+      <small class="legend">
+        Legend: D=drone(blue) █(red)=burning █(brown)=natural burnt ▓(orange)=extinguished
+        █(cyan)=lake █(yellow)=resupply █(gray)=urban █(green)=forest █(light-green)=grassland
+      </small>
+    </section>
+
+    <section class="metrics">
+      <h2>Metrics</h2>
+      <div class="metric-panels">
+        <div class="panel">
+          <h3>Per-step values</h3>
+          <div id="metrics-table"></div>
+        </div>
+        <div class="panel">
+          <h3>Agent status at frame</h3>
+          <pre id="agent-status" class="mono"></pre>
+        </div>
+      </div>
+      <div class="charts">
+        <canvas id="chart-burning" width="900" height="200"></canvas>
+        <canvas id="chart-ext" width="900" height="200"></canvas>
+        <canvas id="chart-natural" width="900" height="200"></canvas>
+      </div>
+    </section>
+
+    <section class="export">
+      <h2>Export</h2>
+      <div class="row">
+        <label>Range</label>
+        <input id="start" type="number" min="1" value="1"> –
+        <input id="end" type="number" min="1" value="1">
+        <label>FPS</label>
+        <input id="xfps" type="number" step="0.1" min="0.1" value="2">
+        <label>Font</label>
+        <input id="xfont" type="number" min="10" max="28" value="14">
+        <label>BG</label>
+        <input id="xbg" type="color" value="#111111">
+        <button id="export-gif">Export GIF</button>
+        <button id="export-png">Export PNG ZIP</button>
+        <span id="exportmsg"></span>
+      </div>
+    </section>
+  </div>
+  <script src="/static/app.js"></script>
 </body>
 </html>
